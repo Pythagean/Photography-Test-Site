@@ -534,3 +534,19 @@ textarea.form-control {
 input[type="search"] {
   -webkit-appearance: none;
 }
+
+.links {
+	padding-top:20px;
+	text-align: center;
+	padding-bottom:20px;
+	background-color: #fff;
+	border-top:3px solid #66A3FF;
+}
+
+.links a {
+	padding: 10px;
+}
+
+.links img {
+	border: 1.5px solid #66A3FF;
+}

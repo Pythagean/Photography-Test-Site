@@ -34,7 +34,9 @@ h1 {
 }
 h2,
 .links {
-  text-align: center;
+	padding-top:10px;
+	text-align: center;
+	padding-bottom:10px;
 }
 
 @media (min-width: 481px) {
