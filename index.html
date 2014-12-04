@@ -14,6 +14,11 @@
 
 		
 		<link rel="stylesheet" href="css/bootstrap.min.css" id="bootstrap-css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+		<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+		<link rel="stylesheet" href="css/blueimp-gallery.min.css">
+		
 		<script src="js/bootstrap.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
@@ -75,10 +80,44 @@
 </div>
 </div>
 
+<div id="links" class="links">
+<a href="img/1.png" title="1">
+        <img src="img/thumbs/1.png" alt="1">
+    </a>
+    <a href="img/2.png" title="2">
+        <img src="img/thumbs/2.png" alt="2">
+    </a>
+    <a href="img/3.png" title="3">
+        <img src="img/thumbs/3.png" alt="3">
+    </a>
+</div>
+
+
+<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+
+
+
+
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+		<script src="js/bootstrap-image-gallery.min.js"></script>
+		<script src="js/blueimp-gallery.min.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -89,10 +128,36 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+		
+		<script>
+document.getElementById('links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+};
+</script>
+
     </body>
 	
 	<div id="footer">
-	 <div id="fContent">Albums go here</div>
+	 <div id="fContent">Featured Albums</div>
+	 
+<!-- 	 <div id="links">
+    <a href="img/1.png" title="1" data-gallery>
+        <img src="img/thumbs/1.png" alt="1">
+    </a>
+    <a href="img/2.png" title="2" data-gallery>
+        <img src="img/thumbs/2.png" alt="2">
+    </a>
+    <a href="img/3.png" title="3" data-gallery>
+        <img src="img/thumbs/3.png" alt="3">
+    </a>
+</div>
+ -->
+	 
 	</div>
 	
 	
